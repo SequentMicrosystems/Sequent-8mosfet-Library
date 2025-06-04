@@ -1,4 +1,4 @@
-# Sequent-8crt-Library
+# Sequent-8mosfet-Library
 Arduino library for Sequent Microsystems [Eight MOSFETS 8-Layer Stackable HAT for Raspberry Pi](https://sequentmicrosystems.com/products/eight-mosfets-8-layer-stackable-card-for-raspberry-pi)
 
 
@@ -9,7 +9,7 @@ Go to **Tools**>>**Manage Libraries..** menu and search for *SM_8MOS* and click 
 To download click <>Code > [Download ZIP](https://github.com/SequentMicrosystems/Sequent-8mosfet-Library/archive/refs/heads/main.zip) button from the main [page](https://github.com/SequentMicrosystems/Sequent-8mosfet-Library), rename the uncompressed folder to "SM_16univin" 
 and copy to the libraries subdirectory of your sketchbook directory ("This PC > Documents > Arduino > libraries" for a Windows PC
  or "Home > arduino > libraries" on Linux PC). Now launch the Arduino environment. If you open the Sketch > Include Library menu, you should see SM_8MOS inside. 
- The library will be compiled with sketches that use it. Open an arduino sketch, go to File > Examples > SM_8MOS > and chose your example to run.
+ The library will be compiled with sketches that use it. Open an arduino sketch, go to File > Examples > SM_8MOS > and choose your example to run.
 
 ## Usage
 There are three ways to control the Eight MOSFETS 8-Layer Stackable HAT from the Arduino environment.
@@ -55,20 +55,20 @@ In your sketchbook set the board type to DOIT ESP32 DEVKIT V1: Tool >> Board >> 
 
 	/*!
 	 * @brief Check card presence
-	 * @return Returns true is successful
+	 * @return Returns true if successful
 	 */
 	bool begin();
 
 	/*!
-	 * @brief Return card existance status
-	 * @return Returns true if card is present
+	 * @brief Return card existence status
+	 * @return Returns true if the card is present
 	 */
 	bool isAlive();
 	/*!
 	 * @brief Write one mosfet state .
 	 * @param channel [1..8]
 	 * @param val The new state true = on, false = off
-	 * @return  true if succeed, false else
+	 * @return  true if succeeds, false otherwise
 	 */
 	bool writeChannel(uint8_t channel, uint8_t val);
 
@@ -76,16 +76,16 @@ In your sketchbook set the board type to DOIT ESP32 DEVKIT V1: Tool >> Board >> 
     /*!
 	 * @brief Write the PWM fill factor for one channel.
 	 * @param channel [1..8]
-	 * @param pwm [0..100] fill factor precent
-	 * @return true if succeed, false else
+	 * @param pwm [0..100] fill factor percent
+	 * @return true if succeeds, false otherwise
 	 */
 	bool writePWM(uint8_t channel, float pwm);
 	
 	
 	/*!
-	 * @brief Write the frequency of the PWM (aply to all channels) .
+	 * @brief Write the frequency of the PWM (apply to all channels).
 	 * @param frequency in Hz [16..2000]
-	 * @return true if succeed, false else
+	 * @return true if succeeds, false otherwise
 	 */
 	bool writeFreqency(int frequency);
 	
@@ -100,13 +100,13 @@ In your sketchbook set the board type to DOIT ESP32 DEVKIT V1: Tool >> Board >> 
     /*!
 	 * @brief Read the PWM fill factor for one channel.
 	 * @param channel [1..8]
-	 * @return fill factor precent
+	 * @return fill factor percent
 	 */
 	float readPWM(uint8_t channel);
 	
 	
 	/*!
-	 * @brief Read the frequency of the PWM (aply to all channels) .
+	 * @brief Read the frequency of the PWM (apply to all channels).
 	 * @return frequency in Hz [16..2000]
 	 */
 	int readFreqency(int frequency);
